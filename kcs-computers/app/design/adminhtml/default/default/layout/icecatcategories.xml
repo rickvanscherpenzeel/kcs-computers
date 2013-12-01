@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0.0">
+  <adminhtml_icecatcategories_index>
+  
+ <reference name="content">
+		<block type="icecatcategories/adminhtml_icecatcategories_switcher" name="icecatcategories.switcher" before="icecatcategories" template="icecatcategories/switcher.phtml"></block>
+	  <block type="icecatcategories/adminhtml_icecatcategories" name="icecatcategories"/>
+	  <block type="icecatcategories/adminhtml_icecatcategories_buttons" name="icecatcategories.buttons" template="icecatcategories/buttons.phtml"></block>
+	</reference>
+  </adminhtml_icecatcategories_index>
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<menu>
+		<shortcuts translate="title">
+			<title>Shortcuts</title>
+			<sort_order>110</sort_order>
+				<children>
+		    		<clearcacheshortcut  translate="title">
+		                    <title>Cache Management</title>
+		                    <sort_order>1</sort_order>
+		                    <action>adminhtml/clearCacheShortcut</action> 
+		            </clearcacheshortcut>
+         		</children>
+         		<children>
+		    		<storemanagershortcut  translate="title">
+		                    <title>Manage Stores</title>
+		                    <sort_order>2</sort_order>
+		                    <action>adminhtml/system_store</action> 
+		            </storemanagershortcut>
+         		</children>
+         </shortcuts>
+    </menu>
+    
+       <!-- Access control list configuration -->
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                	<shortcuts>
+                		<title>Shortcuts</title>
+                		<children>
+	            			<clearcacheshortcut translate="title">
+	                 			<title>Cache Management</title>
+	               			</clearcacheshortcut>
+	            		</children>
+	            		<children>
+				    		<storemanagershortcut translate="title">
+				                    <title>Manage Stores</title>
+				            </storemanagershortcut>
+         				</children>
+	            	</shortcuts>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

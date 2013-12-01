@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+    
+        <!--format of tag below is: Namespace_Module
+			in our case namespace will be Bippocoid, and module name is Investorcatalog -->
+        <RvSWebdesign_ClearCacheShortcut>
+  
+            <!--Tag active: true will tell magento to enable our module in magento -->
+            <active>true</active>
+            
+            <codePool>local</codePool>
+        </RvSWebdesign_ClearCacheShortcut>
+    </modules>
+</config>

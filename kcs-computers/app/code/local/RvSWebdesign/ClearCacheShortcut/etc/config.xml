@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <RvSWebdesign_ClearCacheShortcut>
+            <version>1.0.0</version>
+        </RvSWebdesign_ClearCacheShortcut>
+    </modules>
+    
+    <global>
+	    <helpers>
+	        <clearcacheshortcut>
+	            <class>RvSWebdesign_ClearCacheShortcut_Helper</class>
+	        </clearcacheshortcut>
+	    </helpers>
+	</global>
+	
+	<!-- Tell Magento where controller is -->
+	<admin>
+	    <routers>
+	        <adminhtml>
+	            <args>
+	                <modules>
+	                
+	                <!-- Use your namespace and module to make it unique -->
+	                    <rvswebdesign_clearcacheshortcut after="Mage_Adminhtml">RvSWebdesign_ClearCacheShortcut_Adminhtml</rvswebdesign_clearcacheshortcut>
+	                
+	                </modules>
+	            </args>
+	        </adminhtml>
+	    </routers>
+	</admin>
+	<adminhtml>
+		<layout>
+            <updates>
+                <clearcacheshortcut>
+                    <file>clearcacheshortcut.xml</file>
+                </clearcacheshortcut>
+            </updates>
+        </layout>
+	</adminhtml>
+</config>    

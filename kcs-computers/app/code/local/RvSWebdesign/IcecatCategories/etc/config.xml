@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <RvSWebdesign_IcecatCategories>
+            <version>1.0.0</version>
+        </RvSWebdesign_IcecatCategories>
+    </modules>
+    
+    <global>
+		<helpers>
+			<icecatcategories>
+				<class>RvSWebdesign_IcecatCategories_Helper</class>
+			</icecatcategories>
+		</helpers>
+		
+		<blocks>
+	  		<icecatcategories>
+				<class>RvSWebdesign_IcecatCategories_Block</class>
+	  		</icecatcategories>
+		</blocks>
+		
+		<resources>
+	        <icecatcategories_setup>
+	            <setup>
+	                <module>RvSWebdesign_IcecatCategories</module>
+	                <class>RvSWebdesign_IcecatCategories_Model_Resource_Setup</class>
+	            </setup>
+	        </icecatcategories_setup>
+    	</resources>
+    	
+    	<models>
+	        <icecatcategories>
+	            <class>RvSWebdesign_IcecatCategories_Model</class>
+	            <!--
+	            need to create our own resource, cant just
+	            use core_resource
+	            -->
+	            <resourceModel>icecatcategories_resource</resourceModel>
+	        </icecatcategories>
+	          
+	        <icecatcategories_resource>
+	            <class>RvSWebdesign_IcecatCategories_Model_Resource</class>
+	            <entities>
+                	<icecatcats>
+                    	<table>icecat_categories</table>
+                	</icecatcats>
+            </entities>
+		    </icecatcategories_resource>
+	    </models>
+	    
+	</global>
+	 
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<rvswebdesign_icecatcategories after="Mage_Adminhtml">RvSWebdesign_IcecatCategories_Adminhtml</rvswebdesign_icecatcategories>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin> 
+	  
+    <adminhtml>
+		<menu>
+			<dropship translate="title">             
+			<!-- This is our menu configuration (display option) -->
+				<title>Dropship</title>
+				<sort_order>100</sort_order>
+					<children>
+						<icecatcategoriesbackend translate="title" module="icecatcategories">
+							<title>Icecat Category importer</title>
+							<sort_order>1</sort_order>
+							<action>adminhtml/icecatCategories</action>
+						</icecatcategoriesbackend>
+					</children>
+					<children>
+						<configlink translate="title"> 
+							<title>Configuration</title>
+							<sort_order>10</sort_order>
+							<action>adminhtml/system_config</action>
+						</configlink>
+					</children>
+			</dropship>
+		</menu>
+
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<dropship>
+							<title>Dropship</title>
+								<children>
+									<icecatcategoriesbackend translate="title" module="icecatcategories">
+										<title>Icecat Category importer</title>
+									</icecatcategoriesbackend>
+								</children>
+								<children>
+									<configlink translate="title">
+										<title>Configuration</title>
+									</configlink>
+								</children>
+						</dropship>
+						<system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <icecat_options>
+                                            <title>IceCat! Category Config Section</title>
+                                        </icecat_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+						
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		
+		<layout>
+	  		<updates>
+				<icecats>
+		  			<file>icecatcategories.xml</file>
+				</icecats>
+	  		</updates>
+		</layout>
+		 <translate>
+            <modules>
+                <RvSWebdesign_IcecatCategories>
+                    <files>
+                        <default>RvSWebdesign_IcecatCategories.csv</default>
+                    </files>
+                </RvSWebdesign_IcecatCategories>
+            </modules>
+        </translate>
+        
+	</adminhtml>
+</config>
